@@ -129,11 +129,11 @@ int dist1[MAXN], dist2[MAXN];
 int n;
 vector<int> edges[MAXN];
 
-void bfs(int cur, int* array) {
+void dfs(int cur, int *array) {
     for (int i : edges[cur]) {
         if (array[i] < 0) {
             array[i] = array[cur] + 1;
-            bfs(i, array);
+            dfs(i, array);
         }
     }
 }
@@ -150,8 +150,8 @@ int main() {
     memset(dist2, -1, sizeof(dist2));
     dist1[1] = 0;
     dist2[n] = 0;
-    bfs(1, dist1);
-    bfs(n, dist2);
+    dfs(1, dist1);
+    dfs(n, dist2);
 
     int cnt = 0;
     for (int i = 1; i <= n; ++i) {
