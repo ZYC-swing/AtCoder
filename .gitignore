@@ -1,9 +1,0 @@
-.idea/
-CMakeLists.txt
-[a-z].cpp
-cmake-build-debug/
-gen*
-main.cpp
-*.sh
-in
-out
